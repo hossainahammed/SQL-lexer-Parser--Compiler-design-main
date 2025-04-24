@@ -72,7 +72,7 @@ bool parseSelect(const vector<string>& tokens) {
         if (toUpper(token) == "JOIN") return false;
     }
 
-    // Allow multiple columns in the SELECT clause
+   
     size_t index = 1;
     while (index < tokens.size() - 2 && tokens[index] != "FROM") {
         if (tokens[index] == ",") continue; // Skip commas
@@ -119,7 +119,7 @@ bool parseSQL(const string& sql) {
 
 int main() {
     cout << "📘 SQL Syntax Validator\n";
-    cout << "Enter your SQL query (end with a semicolon `;`) or type 'exit;' to quit:\n";
+    cout << "Enter your SQL query ( that must bw end with a semicolon `;`) or type 'exit;' to quit:\n";
 
     string input, line;
     while (true) {
@@ -138,7 +138,7 @@ int main() {
         if (parseSQL(trimmed)) {
             cout << "✅ Query is VALID\n";
         } else {
-            cout << "❌ Query is INVALID\n";
+            cout << "❌ Given Query is INVALID\n";
         }
 
         input.clear();
